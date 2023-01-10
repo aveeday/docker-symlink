@@ -4,6 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: cd deploy
+      - run: mkdir deploy
       - run: ln -s ../README.md readme
+        working-directory: ./deploy
       - run: ls -la deploy
