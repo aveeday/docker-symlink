@@ -9,6 +9,7 @@ jobs:
       - run: mkdir deploy
       - run: ln -s ../README.md readme
         working-directory: ./deploy
-      - run: docker build -t test .
+      - run: tar -czh . | docker build -t test . -
+      # - run: docker build -t test .
       - run: docker run test ls -la /deploy
       - run: docker run test cat /deploy/readme
