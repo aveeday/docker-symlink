@@ -8,3 +8,5 @@ jobs:
       - run: ln -s ../README.md readme
         working-directory: ./deploy
       - run: ls -la deploy
+      - run: docker build -t test .
+      - run: docker run test ls -la /deploy
